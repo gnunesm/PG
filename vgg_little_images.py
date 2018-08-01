@@ -247,18 +247,18 @@ class utils:
             plt.ylabel('Real')
             plt.xlabel('Predicted')
 
-    # Compute confusion matrix
-    cnf_matrix = confusion_matrix(predictions["labels"],predictions["classes"])
-    np.set_printoptions(precision=2)
+        # Compute confusion matrix
+        cnf_matrix = confusion_matrix(predictions["labels"],predictions["classes"])
+        np.set_printoptions(precision=2)
 
-    # # Plot normalized confusion matrix
-    plt.figure(figsize=(10,7))
-    plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True,
-                          title='Normalized confusion matrix')
-    plt.grid('off')
+        # # Plot normalized confusion matrix
+        plt.figure(figsize=(10,7))
+        plot_confusion_matrix(cnf_matrix, classes=class_names, normalize=True,
+                              title='Normalized confusion matrix')
+        plt.grid('off')
 
-    #plt.savefig("./confusion_matrix.png") #Save the confision matrix as a .png figure.
-    plt.show()
+        #plt.savefig("./confusion_matrix.png") #Save the confision matrix as a .png figure.
+        plt.show()
       
 def get_vgg16(input_images, cut_layer = "pool5", scope_name = "vgg16", fine_tunning = False):  
 
